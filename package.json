@@ -1,0 +1,20 @@
+{
+  "name": "snowpack-plugin-sass",
+  "version": "1.0.0",
+  "description": "Use the [node-sass](https://github.com/sass/node-sass) to build `.sass/.scss` files from source",
+  "main": "plugin.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fansenze/snowpack-plugin-sass.git"
+  },
+  "author": "senze.fan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fansenze/snowpack-plugin-sass/issues"
+  },
+  "homepage": "https://github.com/fansenze/snowpack-plugin-sass#readme",
+  "dependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
