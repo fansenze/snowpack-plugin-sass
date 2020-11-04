@@ -4,7 +4,7 @@ const path = require('path');
 
 const pkg = require('./package.json');
 
-const render = async (filepath) => {
+const render = async (filepath, pluginOptions) => {
   return new Promise((resolve, reject) => {
     fs.readFile(filepath, { encoding: 'utf-8' }, (err, data) => {
       if (err) {
@@ -19,6 +19,7 @@ const render = async (filepath) => {
             // Set `indentedSyntax: false` to disable the indented syntax which is Sass’s original syntax,
             // and enable the curly braces syntax for scss file.
             indentedSyntax: extname === '.sass',
+            ... pluginOptions
           },
           (err, result) => {
             if (err) {
@@ -33,7 +34,7 @@ const render = async (filepath) => {
   });
 }
 
-module.exports = function plugin(snowpackConfig) {
+module.exports = function plugin(snowpackConfig, pluginOptions) {
   return {
     name: pkg.name,
     resolve: {
@@ -42,7 +43,7 @@ module.exports = function plugin(snowpackConfig) {
     },
     async load({ filePath }) {
       try {
-        const result = await render(filePath);
+        const result = await render(filePath, pluginOptions);
         return {
           '.css': result.css.toString(),
         };
