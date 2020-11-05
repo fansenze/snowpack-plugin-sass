@@ -19,7 +19,7 @@ const render = async (filepath, pluginOptions) => {
             // Set `indentedSyntax: false` to disable the indented syntax which is Sass’s original syntax,
             // and enable the curly braces syntax for scss file.
             indentedSyntax: extname === '.sass',
-            ... pluginOptions
+            ... pluginOptions,
           },
           (err, result) => {
             if (err) {
@@ -32,7 +32,7 @@ const render = async (filepath, pluginOptions) => {
       }
     });
   });
-}
+};
 
 module.exports = function plugin(snowpackConfig, pluginOptions) {
   return {
@@ -52,4 +52,4 @@ module.exports = function plugin(snowpackConfig, pluginOptions) {
       }
     },
   };
-}
+};
