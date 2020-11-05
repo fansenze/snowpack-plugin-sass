@@ -19,4 +19,12 @@ add this plugin to your Snowpack config:
   ]
 }
 ```
+*or*
+```json
+{
+  "plugins": [
+    ["snowpack-plugin-sass", { /* node-sass options */ }]
+  ]
+}
+```
 
